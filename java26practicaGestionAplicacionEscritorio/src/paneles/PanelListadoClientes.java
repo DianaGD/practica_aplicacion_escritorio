@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
 
 import tableModels.TableModelClientes;
 import daos.ClientesDAO;
@@ -23,6 +24,7 @@ public class PanelListadoClientes extends JPanel implements ActionListener{
 	private Cliente[] clientes;
 	JTable tabla;
 	JButton botonBorrar = new JButton("BORRAR");
+	
 	public PanelListadoClientes() {
 		this.add(new JLabel("soy el panel de listado de clientes"));
 	}//end PanelListadoClientes()
@@ -55,6 +57,7 @@ public class PanelListadoClientes extends JPanel implements ActionListener{
 		JOptionPane.showMessageDialog(null, "borrar: " + clientes[tabla.getSelectedRow()].toString());
 		daoClientes.borrarCliente(clientes[tabla.getSelectedRow()].getId());
 		refrescarClientes();
+		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
 }//end class
