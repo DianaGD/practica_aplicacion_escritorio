@@ -10,4 +10,5 @@ public class ConstantesSQL {
 				+ "(?,?,?,?,?,?,?)";
 	final static String sqlSeleccionJuguetes = "select * from tabla_juguetes";
 	public static String sqlBorradoCliente = "delete from tabla_clientes where id=? ";
+	public static String sqlBorradoJuguete = "delete from tabla_juguetes where id=? ";
 }

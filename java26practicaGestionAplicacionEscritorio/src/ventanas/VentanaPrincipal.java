@@ -63,7 +63,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener{
 		//vamos a decir que cuando arranque esta ventana se
 		//muestre el panel de registro cliente
 		//this.add(panelRegistroCliente); MEJOR HACERLO CON setContentPane, porque es el panel que va a contener el resto de elementos
-		this.setContentPane(panelRegistroJuguete);
+		this.setContentPane(panelRegistroCliente);
 		this.setVisible(true);
 
 	}

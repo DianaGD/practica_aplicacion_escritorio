@@ -8,6 +8,7 @@ public class Juguete {
 	private String categoria;
 	private String edad;
 	private String contenido;
+	private int id;
 	
 	
 	
@@ -25,6 +26,14 @@ public class Juguete {
 		this.edad = edad;
 		this.contenido = contenido;
 	}//end Juguete(campos)
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getMarca() {
 		return marca;

@@ -130,8 +130,8 @@ public class PanelRegistroJuguete extends JPanel implements ActionListener {
 		String descripcion = campoDescripcion.getText();
 		String precio = campoPrecio.getText();
 		//String categoria = campoCategoria.getText();
-		JComboBox cb = (JComboBox)e.getSource();
-        String categoria = (String)cb.getSelectedItem();
+	
+        String categoria = (String)campoCategoria.getSelectedItem();
 		
 		String edad = campoEdad.getText();
 		String contenido = campoContenido.getText();

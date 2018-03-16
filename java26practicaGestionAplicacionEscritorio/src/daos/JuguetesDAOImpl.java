@@ -53,7 +53,15 @@ public class JuguetesDAOImpl implements JuguetesDAO{
 
 	@Override
 	public void borrarJuguete(int id) {
-		// TODO Auto-generated method stub
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.sqlBorradoJuguete);
+			ps.setInt(1, id);
+			ps.execute();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("la sql de borrado esta mal");
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
@@ -73,6 +81,7 @@ public class JuguetesDAOImpl implements JuguetesDAO{
 				j.setCategoria(resultado.getString("categoria"));
 				j.setEdad(resultado.getString("edad"));
 				j.setContenido(resultado.getString("contenido"));
+				j.setId(resultado.getInt("id"));
 				listJuguetes.add(j);
 			}
 			juguetes = listJuguetes.toArray(new Juguete[listJuguetes.size()]);

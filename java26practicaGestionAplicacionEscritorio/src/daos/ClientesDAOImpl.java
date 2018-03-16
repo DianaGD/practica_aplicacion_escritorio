@@ -51,9 +51,11 @@ public class ClientesDAOImpl implements ClientesDAO {
 	@Override
 	public void borrarCliente(int id) {
 		try {
+			//System.out.println("en try borrarCliente() ClientesDAOImpl");
 			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.sqlBorradoCliente);
 			ps.setInt(1, id);
 			ps.execute();
+			System.out.println("en try borrarCliente() ClientesDAOImpl despues de execute()");
 			ps.close();
 		} catch (SQLException e) {
 			System.out.println("la sql de borrado esta mal");
@@ -79,6 +81,7 @@ public class ClientesDAOImpl implements ClientesDAO {
 				c.setCodigoPostal(resultado.getString("codigo_postal"));
 				c.setPoblacion(resultado.getString("poblacion"));
 				c.setTelefono(resultado.getString("telefono"));
+				c.setId(resultado.getInt("id"));
 				listClientes.add(c);				
 			}//end while
 			//transformar de list a array - metodo toArray q hay que pasarle el tamaño del array
